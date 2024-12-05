@@ -12,7 +12,9 @@ class RoleController extends Controller
 {
     public function index()
     {
-        return view('roles.index');
+        $data = Role::get();
+
+        return view('roles.index', compact('data'));
     }
 
     public function store(RoleRequest $request)

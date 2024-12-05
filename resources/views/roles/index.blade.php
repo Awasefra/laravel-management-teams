@@ -20,13 +20,40 @@
             <th scope="col" class="px-4 py-3 text-left">
                 Name
             </th>
-            <th scope="col" class="rounded-tr-lg px-4 py-3 text-left">
+            <th scope="col" class="px-4 py-3 text-left">
+                Tanggal Pembuatan
+            </th>
+            <th scope="col" class="px-4 py-3 text-left">
+                Tanggal Diubah
+            </th>
+            <th scope="col" class="rounded-tr-lg px-4 py-3 text-center">
                 Action
             </th>
         </tr>
     </thead>
     <tbody>
-
+        @foreach ($data as $role)
+        <tr class="bg-white border-b hover:bg-gray-100 ">
+            <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-center">
+                {{ $loop->iteration}}
+            </td>
+            <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-left">
+                {{ $role->name}}
+            </td>
+            <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-left">
+                {{ $role->created_at}}
+            </td>
+            <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-left">
+                {{ $role->updated_at}}
+            </td>
+            <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-center">
+                <button 
+                    class="inline-flex items-center text-sm font-bold text-center rounded-lg text-blue-600 hover:underline">
+                    Edit
+                </button>
+            </td>
+        </tr>
+        @endforeach
     </tbody>
 </table>
 
