@@ -47,7 +47,7 @@
                 {{ $role->updated_at}}
             </td>
             <td scope="row" class="px-4 py-3 font-normal text-gray-900 text-center">
-                <button 
+                <button onclick="openFormUpdate({{ $role }})"  data-modal-target="update-role-modal" data-modal-toggle="update-role-modal"
                     class="inline-flex items-center text-sm font-bold text-center rounded-lg text-blue-600 hover:underline">
                     Edit
                 </button>
@@ -58,5 +58,6 @@
 </table>
 
 @include('roles.create-modal')
+@include('roles.update-modal')
 <script src="/js/role.js"></script>
 @endsection

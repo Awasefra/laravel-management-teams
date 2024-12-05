@@ -17,5 +17,6 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/roles')->name('roles.')->controller(RoleController::class)->group(function () {
         Route::get('/', 'index');
         Route::post('/', 'store')->name('store');
+        Route::put('/{id}', 'update')->name('update');
     });
 });
