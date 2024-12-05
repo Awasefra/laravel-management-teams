@@ -11,8 +11,7 @@
 
                 <button type="button" id="close-btn"
                     class="end-2.5 text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                    data-modal-hide="create-role-modal"
-                    onclick="resetFormAccount('createAccountForm', this.closest('form'))">
+                    data-modal-hide="create-role-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -21,7 +20,7 @@
                     <span class="sr-only">Close modal</span>
                 </button>
             </div>
-            <form method="POST" id="createAccountForm">
+            <form method="POST" id="createRoleForm">
                 @csrf
                 <div class="p-4 md:p-5">
                     <div class="mb-20">
@@ -39,12 +38,12 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" 
+                <button type="button" onclick="createRole(this.closest('form'))"
                     class="absolute right-2 bottom-3 items-center w-24 mr-3 px-2 py-2 text-sm font-medium text-white bg-navside border rounded-md hover:bg-hover hover:border-hover ">
                     <p class="w-full items-center text-md">
                         Create</p>
                 </button>
-                <button type="submit" class="hidden" id="btnSubmitCreateAccount">
+                <button type="submit" class="hidden" id="btnSubmitCreateRole">
                 </button>
             </form>
         </div>

@@ -26,9 +26,10 @@
         </tr>
     </thead>
     <tbody>
-        
+
     </tbody>
 </table>
 
 @include('roles.create-modal')
+<script src="/js/role.js"></script>
 @endsection
