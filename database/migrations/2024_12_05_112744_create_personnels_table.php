@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('personnels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('status', ['Magang', 'Intership', 'Staff']);
+            $table->enum('status', ['Magang', 'Internship', 'Staff']);
             $table->timestamps();
         });
     }
