@@ -15,7 +15,7 @@
     $pageTitle = is_numeric($lastSegment) ? $thirdLastSegment . ' ' . $secondLastSegment : $lastSegment;
     $pageTitle = ucfirst(str_replace('-', ' ', $pageTitle));
     @endphp
-
+    @stack('css')
     <title>{{ $pageTitle }} - Management Team</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

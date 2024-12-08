@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ScheduleController;
 
 Route::get('/', [AuthController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->middleware('guest')->name('authenticate');
@@ -25,6 +26,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/', 'index');
         Route::post('/', 'store')->name('store');
         Route::put('/{id}', 'update')->name('update');
+    });
+    Route::prefix('/schedules')->name('schedules.')->controller(ScheduleController::class)->group(function () {
+        Route::get('/', 'index');
+        Route::get('/jadwal/{personnel_id}', 'getJadwalById');
+        Route::get('/add', 'indexFormCreate')->name('show-create');
+        Route::post('/add', 'store')->name('store');
     });
 
 });
