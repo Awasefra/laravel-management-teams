@@ -115,7 +115,7 @@
         // Event listener untuk seleksi
         option.addEventListener("click", () => {
           checkbox.checked = !checkbox.checked;
-          option.classList.toggle("bg-blue-500", checkbox.checked);
+          option.classList.toggle("bg-red-600", checkbox.checked);
           option.classList.toggle("text-white", checkbox.checked);
           option.classList.toggle("border-blue-700", checkbox.checked);
         });

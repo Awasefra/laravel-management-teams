@@ -93,7 +93,11 @@
             // Menandai checkbox yang sesuai dengan data yang diterima
             if (data.includes(day.toString())) {  // Cek jika day ada di dalam data
                 checkbox.checked = true;
-                option.classList.add("bg-blue-500", "text-white", "border-blue-700");
+                option.classList.add("bg-gray-500", "text-white", "border-blue-700");
+            }
+            else
+            {
+                option.classList.add("bg-red-500", "text-white", "border-blue-700");
             }
         }
     }

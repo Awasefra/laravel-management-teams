@@ -39,7 +39,7 @@ class ScheduleController extends Controller
         $data = [
             'personnel_id'  => $request->personnel_id,
             'date'           => $date,
-            'array_date_in'  => json_encode($dateArray) // Encode array as JSON
+            'array_date'  => json_encode($dateArray) // Encode array as JSON
         ];
         // dd($data);
 
@@ -51,7 +51,7 @@ class ScheduleController extends Controller
     {
         $schedule = Schedule::where('personnel_id', $personnelId)->first();
 
-        $schedule->array_date_in = json_decode($schedule->array_date_in, true);
+        $schedule->array_date_in = json_decode($schedule->array_date, true);
 
         return response()->json(new ApiResource(true, 200, 'Successfully get data', $schedule), 200);
     }
